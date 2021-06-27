@@ -26,8 +26,10 @@ clean:
 
 install:
 	# binary and manual page
-	install -D -m 755 $(PROGRAM) $(DESTDIR)$(BINDIR)/$(PROGRAM)
-	install -D -m 644 $(PROGRAM).1 $(DESTDIR)$(MANDIR)/$(PROGRAM).1
+	install -d $(DESTDIR)$(BINDIR)
+	install -m 755 $(PROGRAM) $(DESTDIR)$(BINDIR)/$(PROGRAM)
+	install -d $(DESTDIR)$(MANDIR)
+	install -m 644 $(PROGRAM).1 $(DESTDIR)$(MANDIR)/$(PROGRAM).1
 	# program sylinks
 	ln -sf $(PROGRAM) $(DESTDIR)$(BINDIR)/gunzip
 	ln -sf $(PROGRAM) $(DESTDIR)$(BINDIR)/gzcat
@@ -36,16 +38,16 @@ install:
 	ln -sf $(PROGRAM).1 $(DESTDIR)$(MANDIR)/gzcat.1
 	ln -sf $(PROGRAM).1 $(DESTDIR)$(MANDIR)/zcat.1
 	# scripts
-	install -D -m 755 gzexe $(DESTDIR)$(BINDIR)/gzexe
-	install -D -m 755 zdiff $(DESTDIR)$(BINDIR)/zdiff
-	install -D -m 755 zforce $(DESTDIR)$(BINDIR)/zforce
-	install -D -m 755 zmore $(DESTDIR)$(BINDIR)/zmore
-	install -D -m 755 znew $(DESTDIR)$(BINDIR)/znew
-	install -D -m 755 gzexe.1 $(DESTDIR)$(MANDIR)/gzexe.1
-	install -D -m 755 zdiff.1 $(DESTDIR)$(MANDIR)/zdiff.1
-	install -D -m 755 zforce.1 $(DESTDIR)$(MANDIR)/zforce.1
-	install -D -m 755 zmore.1 $(DESTDIR)$(MANDIR)/zmore.1
-	install -D -m 755 znew.1 $(DESTDIR)$(MANDIR)/znew.1
+	install -m 755 gzexe $(DESTDIR)$(BINDIR)/gzexe
+	install -m 755 zdiff $(DESTDIR)$(BINDIR)/zdiff
+	install -m 755 zforce $(DESTDIR)$(BINDIR)/zforce
+	install -m 755 zmore $(DESTDIR)$(BINDIR)/zmore
+	install -m 755 znew $(DESTDIR)$(BINDIR)/znew
+	install -m 755 gzexe.1 $(DESTDIR)$(MANDIR)/gzexe.1
+	install -m 755 zdiff.1 $(DESTDIR)$(MANDIR)/zdiff.1
+	install -m 755 zforce.1 $(DESTDIR)$(MANDIR)/zforce.1
+	install -m 755 zmore.1 $(DESTDIR)$(MANDIR)/zmore.1
+	install -m 755 znew.1 $(DESTDIR)$(MANDIR)/znew.1
 	# script symlinks
 	ln -sf zdiff $(DESTDIR)$(BINDIR)/zcmp
 	ln -sf zdiff $(DESTDIR)$(BINDIR)/xzdiff
