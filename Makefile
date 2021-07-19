@@ -4,8 +4,9 @@ PREFIX  ?= /usr/local
 BINDIR  ?= $(PREFIX)/bin
 DATADIR ?= $(PREFIX)/share
 MANDIR  ?= $(DATADIR)/man/man1
-EXTRA_CFLAGS = -std=c99 -D_GNU_SOURCE -Wall -Wextra -Wno-implicit-fallthrough -I. -Dlint `pkg-config --cflags liblzma`
-EXTRA_LDFLAGS = -lz -lbz2 -lfts `pkg-config --libs liblzma`
+PKG_CONFIG ?= pkg-config
+EXTRA_CFLAGS = -std=c99 -D_GNU_SOURCE -Wall -Wextra -Wno-implicit-fallthrough -I. -Dlint `$(PKG_CONFIG) --cflags liblzma`
+EXTRA_LDFLAGS = -lz -lbz2 -lfts `$(PKG_CONFIG) --libs liblzma`
 
 OBJS = gzip.o
 
