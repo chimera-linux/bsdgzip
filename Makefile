@@ -51,10 +51,16 @@ install:
 	install -m 755 znew.1 $(DESTDIR)$(MANDIR)/znew.1
 	# script symlinks
 	ln -sf zdiff $(DESTDIR)$(BINDIR)/zcmp
+	ln -sf zdiff $(DESTDIR)$(BINDIR)/xzcmp
+	ln -sf zdiff $(DESTDIR)$(BINDIR)/bzcmp
 	ln -sf zdiff $(DESTDIR)$(BINDIR)/xzdiff
+	ln -sf zdiff $(DESTDIR)$(BINDIR)/bzdiff
 	ln -sf zmore $(DESTDIR)$(BINDIR)/zless
 	ln -sf zdiff.1 $(DESTDIR)$(MANDIR)/zcmp.1
+	ln -sf zdiff.1 $(DESTDIR)$(MANDIR)/xzcmp.1
+	ln -sf zdiff.1 $(DESTDIR)$(MANDIR)/bzcmp.1
 	ln -sf zdiff.1 $(DESTDIR)$(MANDIR)/xzdiff.1
+	ln -sf zdiff.1 $(DESTDIR)$(MANDIR)/bzdiff.1
 	ln -sf zmore.1 $(DESTDIR)$(MANDIR)/zless.1
 
 gzip.o: unbzip2.c zuncompress.c unpack.c unxz.c unlz.c
